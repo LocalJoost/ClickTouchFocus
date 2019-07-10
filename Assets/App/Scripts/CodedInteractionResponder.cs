@@ -42,6 +42,13 @@ public class CodedInteractionResponder : MonoBehaviour,
         PlayClip(_focusLostAudio);
     }
 
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
+    {
+        _timesClicked++;
+        UpdateText();
+        PlayClip(_clickAudio);
+    }
+
     public void OnPointerDragged(MixedRealityPointerEventData eventData)
     {
     }
@@ -72,13 +79,7 @@ public class CodedInteractionResponder : MonoBehaviour,
     {
     }
 
- 
-    public void OnPointerDown(MixedRealityPointerEventData eventData)
-    {
-        _timesClicked++;
-        UpdateText();
-        PlayClip(_clickAudio);
-    }
+
 
 
     private void UpdateText()
